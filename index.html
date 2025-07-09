@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恋愛占い師 恋蛇｜本気で恋を叶えたいあなたへ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700;800&display=swap');
+
+        :root {
+            --base-color: #2d2d2d; /* 墨色 Sumi-iro */
+            --accent-color: #b69e6c; /* 優雅な金 Graceful Gold */
+            --text-color: #333333;
+            --bg-color: #f5f5f0; /* 和紙のような背景 Washi-like BG */
+            --container-bg: rgba(255, 255, 255, 0.7);
+        }
+
+        body {
+            font-family: 'Shippori Mincho', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 2.0;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDEwMCAxMDAiPgo8ZmlsdGVyIGlkPSJub2lzZSI+CjxmZVR1cmJ1bGVuY2UgdHlwZT0iZnJhY3RhbE5vaXNlIiBiYXNlRnJlcXVlbmN5PSIwLjciIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz4KPGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPgo8L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1clIoI25vaXNlKSIgb3BhY2l0eT0iMC4wNSIvPgo8L3N2Zz4=');
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: var(--container-bg);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            background: linear-gradient(rgba(45, 45, 45, 0.85), rgba(45, 45, 45, 0.95)), url('https://source.unsplash.com/800x1200/?japanese,night,moon') no-repeat center center/cover;
+            color: #f5f5f0;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin: 0;
+            color: var(--accent-color);
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
+            font-weight: 800;
+        }
+
+        header p {
+            font-size: 1.1em;
+            margin-top: 15px;
+            font-weight: 700;
+        }
+        
+        .section {
+            padding: 30px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .section:last-of-type { border-bottom: none; }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8em;
+            color: var(--base-color);
+            margin-bottom: 30px;
+            font-weight: 700;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        .worries p {
+            margin: 10px 0;
+            padding-left: 1em;
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.6);
+            border-radius: 4px;
+            margin-bottom: 25px;
+            padding: 20px;
+            border-top: 3px solid var(--accent-color);
+        }
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+        }
+        .testimonial-title h3 {
+            font-size: 1.2em; border: none; padding: 0; margin: 0; }
+        .testimonial-title p { margin: 5px 0 0; font-size: 0.9em; color: #555; }
+        
+        .toggle-testimonial {
+            cursor: pointer;
+            color: var(--base-color);
+            font-weight: bold;
+            text-align: left;
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 8px 12px;
+            font-family: inherit;
+            font-size: 1em;
+            margin-top: 15px;
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .toggle-testimonial:hover { background-color: #e9e9e4; }
+
+        .testimonial-body {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ccc;
+        }
+
+        .cta-section {
+            background-color: var(--base-color);
+            color: var(--bg-color);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .cta-section h2 { color: var(--accent-color); border-color: var(--accent-color); }
+        .cta-button {
+            display: block;
+            width: 100%;
+            margin: 20px auto 10px;
+            padding: 20px 15px;
+            background: linear-gradient(45deg, var(--accent-color), #d4c19a);
+            color: var(--base-color);
+            text-decoration: none;
+            font-size: 1.4em;
+            font-weight: 800;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+        .cta-button:hover { transform: scale(1.03); }
+        
+        .qa-item { margin-bottom: 15px; }
+        .qa-item .q { font-weight: 700; background-color: #e9e9e4; padding: 10px; border-left: 4px solid var(--accent-color); }
+        .qa-item .a { padding: 15px; background-color: rgba(255,255,255,0.4); }
+
+        footer {
+            text-align: center;
+            padding: 20px 15px;
+            margin-top: 20px;
+            background-color: var(--base-color);
+            color: #aaa;
+            font-size: 0.8em;
+        }
+
+        @media (min-width: 768px) {
+            body { font-size: 18px; }
+            .container { padding: 20px 40px; }
+            header h1 { font-size: 2.8em; }
+            header p { font-size: 1.2em; }
+            h2 { font-size: 2.0em; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>本気で恋を叶えたいあなたへ</h1>
+        <p>その恋の悩み、もう一人で抱え込まないでください。<br>鑑定実績3000人。あなたの恋が向かう未来、その可能性を読み解きます。</p>
+        <p style="font-size: 1.3em; margin-top: 20px; font-weight: 700;">恋愛占い師 恋蛇</p>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="worries">
+                <p>「LINEの返信が少しないだけで、心がざわついてしまう」</p>
+                <p>「彼のSNSを見ては、他の女性の影に胸を痛めてしまう」</p>
+                <p>「『また今度ね』彼のその言葉に、期待と不安で心が揺れ動く」</p>
+                <p>「運命の人だと感じたのに…なぜ、私たちの心はすれ違うのだろう」</p>
+            </div>
+            <p>もし、一つでも心当たりがあるのなら、それは決してあなただけのせいではありません。</p>
+            <p>あなたはこれまで、真剣に悩み、そして愛されるために自分なりに努力を重ねてこられたはずです。それでも望む方向に進まないことがあるのは、あなたの魅力が足りないからではないのです。</p>
+            <p><strong>運命の歯車が、ほんの少しだけ噛み合っていないのかもしれません。</strong></p>
+            <p>その歯車がスムーズに回りだすよう、愛の流れを妨げている根本的な原因を探り、望む未来へ進むための一歩を後押しするのが、私の鑑定です。</p>
+        </section>
+
+        <section class="section">
+            <h2>なぜ、恋蛇の鑑定は、3000人もの相談者様に選ばれてきたのか？</h2>
+            <p>「3000人」という数字は、鑑定の数だけではありません。それは、3000の恋の悩みに真摯に寄り添い、相談者様が笑顔を取り戻すまでを伴走してきた軌跡です。</p>
+            <p>全国各地から寄せられる、誰にも言えない恋の悩み。その一つひとつに丁寧に向き合い、解決の糸口を一緒に探してきた実績が、多くの方に信頼を寄せていただける理由だと自負しております。</p>
+        </section>
+
+        <section class="section">
+            <h2>【感謝の声】喜びのお便りが、私の原動力です</h2>
+            <p style="text-align: center; font-size: 0.9em; color: #666;">※これらはあくまで個人の感想であり、得られる結果には個人差がございます。<br>※写真は個人のプライバシーに配慮したイメージです。</p>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop" alt="A様 イメージ画像">
+                    <div class="testimonial-title">
+                        <h3>case.1「音信不通だった彼との関係に、光が差しました」</h3>
+                        <p>(A様・32歳・会社員)</p>
+                    </div>
+                </div>
+                <button class="toggle-testimonial">【クリックして体験談を読む】</button>
+                <div class="testimonial-body">
+                    <p>大好きだった彼に振られ、連絡も取れなくなり、絶望的な気持ちでした。毎日泣いてばかりで、どうすれば良いか分からず恋蛇先生にご相談しました。先生は彼の性格や状況を丁寧にお話ししてくださり、「彼は今、少し混乱しているだけ。焦る必要はありませんよ。〇月のこの時期に、この内容で一度連絡してみては？」と具体的なアドバイスをくれました。先生の言葉に勇気をもらい、言われた通りに行動すると、彼から返信が来たんです！すぐに関係が元通りになった訳ではありませんが、そこから再び連絡を取り合えるようになり、先日、復縁に向けて前向きに話し合うことができました。一人で悩んでいたら、このチャンスは掴めなかったと思います。</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="K様 イメージ画像">
+                    <div class="testimonial-title">
+                        <h3>case.2「職場のライバルに勝てないと諦めていた片思いが、大逆転しました」</h3>
+                        <p>(K様・29歳・事務職)</p>
+                    </div>
+                </div>
+                <button class="toggle-testimonial">【クリックして体験談を読む】</button>
+                <div class="testimonial-body">
+                    <p>職場の先輩に片思いしていましたが、彼には他に親しい女性がいました。いつも二人で楽しそうに話しているのを見るたびに、私なんて相手にされないと落ち込み、恋を諦めかけていました。恋蛇先生に視ていただくと、「彼はまだ、あなたの本当の魅力に気づいていないだけ。ライバルの彼女にはない、あなただけの武器があるのよ」と言われ、ハッとしました。そして、**「職場の飲み会で、彼が一人になったこのタイミングで、この質問をしてみて」**と、私だからこそできるアプローチ方法を教えてくださったのです。当日は心臓が飛び出そうなくらい緊張しましたが、勇気を出して声をかけると、彼が驚くほど心を開いて話してくれたのです。それがきっかけで急接近し、先日、彼の方から告白されました！</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=400&auto=format&fit=crop" alt="S様 イメージ画像">
+                    <div class="testimonial-title">
+                        <h3>case.3「会えない不安で自滅寸前だった遠距離恋愛が、今では彼の方から会いに来てくれます」</h3>
+                        <p>(S様・26歳・保育士)</p>
+                    </div>
+                </div>
+                <button class="toggle-testimonial">【クリックして体験談を読む】</button>
+                <div class="testimonial-body">
+                    <p>彼との遠距離恋愛が1年経った頃、会えない寂しさと不安から、彼を束縛するような連絡ばかりしてしまい、関係がギクシャクしていました。「重い」と思われているのが分かり、もうダメかもしれないと毎日泣いていました。先生は私の不安な気持ちを全て受け止めた上で、「彼はあなたのことを真剣に想っていますよ。ただ、男性は“信じて待っていてくれる女性”を何よりも大切にするもの。彼が仕事で大きな山を越える〇月までは、この一言だけを伝えて、あとは見守ってあげて」と具体的なアドバイスをくださいました。正直、連絡を我慢するのはとても辛かったですが、先生の言葉を信じて実践しました。すると、言われた時期を過ぎた頃、彼から「信じて待っていてくれてありがとう。俺が会いに行くよ」と連絡が来たのです！</p>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=400&auto=format&fit=crop" alt="M様 イメージ画像">
+                    <div class="testimonial-title">
+                        <h3>case.4「複雑な関係の彼が、大きな決断をしてくれました」</h3>
+                        <p>(M様・41歳・主婦)</p>
+                    </div>
+                </div>
+                <button class="toggle-testimonial">【クリックして体験談を読む】</button>
+                <div class="testimonial-body">
+                    <p>お互いに家庭を持つ彼との関係に、長年悩んでいました。「いつか」という言葉を信じて良いのか、もう諦めるべきなのか、毎日が苦しかったです。先生は私たちの関係性を深く読み解き、「あなた達のご縁は本物です。でも、彼が決断するには、ある“きっかけ”が必要になります」と教えてくれました。そして、彼が心を動かしやすい運気の流れと、その時に私の気持ちをどう伝えるべきかを、優しく諭すようにアドバイスしてくださったのです。先生の後押しのおかげで、彼と真剣に向き合う覚悟が決まりました。結果、彼は私と生きる未来を選んでくれました。あの時、勇気を出して本当に良かったです。</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <img src="https://images.unsplash.com/photo-1542909168-82c3e7fdca5c?q=80&w=400&auto=format&fit=crop" alt="E様 イメージ画像">
+                    <div class="testimonial-title">
+                        <h3>case.5「もう愛情はないと思っていた夫が、昔のように私を名前で呼ぶようになりました」</h3>
+                        <p>(E様・45歳・パート)</p>
+                    </div>
+                </div>
+                <button class="toggle-testimonial">【クリックして体験談を読む】</button>
+                <div class="testimonial-body">
+                    <p>結婚して20年。夫とは会話もなく、お互いを「お父さん」「お母さん」と呼び合う毎日。もう異性として見られていないんだなと、虚しさと寂しさを感じていました。先生は「旦那様があなたへの愛情を失ったわけではありません。感謝を伝える“きっかけ”を忘れてしまっただけなのです」と教えてくれました。そして、**「旦那様の誕生日に、この手紙を渡してみてください」**と、心に響く短い手紙の内容を授けてくださったのです。恥ずかしかったですが渡してみると、夫は驚いた後、静かに涙を流し、「ありがとう」と言ってくれました。その夜、本当に久しぶりに私の名前を呼んでくれました。失いかけていた夫婦の絆を取り戻すきっかけをくださり、感謝しかありません。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <h2>さあ、今度はあなたが前へ進む番です</h2>
+            <p>少し先の未来を、想像してみてください。<br>
+            彼の言動に一喜一憂する不安な夜から解放され、穏やかな気持ちで過ごす毎日を。<br>
+            自分の気持ちを素直に伝え、相手の心に真摯に向き合えるあなたを。<br>
+            自分自身の魅力を信じ、自信を持って恋に臨める、新しいあなたの姿を。</p>
+            <p>それは、決して不可能なことではありません。<br>
+            <strong>あなたの行動一つで、未来は変えていけるのです。</strong></p>
+            <p>私の占いは、未来を断定したり、気休めの言葉をお伝えしたりするものではありません。蛇が脱皮をして成長するように、あなたが古い思い込みの殻を破り、自分らしく輝くための“変容”をサポートするものです。</p>
+            <p>そのために必要な、<strong>物事の「タイミング」、心の「持ち方」、そして具体的な「行動のヒント」</strong>をお伝えします。</p>
+            <p>本気で現状を変えたい、と願う方からのご相談を、心よりお待ちしております。</p>
+            <p>私の鑑定は、一人ひとりのお悩みに深く向き合うため、一度に多くの方を視ることができません。そのため、ご予約が埋まってしまう場合もございますことをご了承ください。</p>
+            <p><strong>あなたが迷い、立ち止まっている間にも、運命の時間は流れていきます。</strong><br>
+            この出会いを、あなたの恋を好転させるきっかけにしませんか？<br>
+            あなたの苦しい恋に寄り添い、望む未来へ進むお手伝いをさせてください。</p>
+            
+            <div style="background-color: rgba(255,255,255,0.1); padding: 15px; margin: 20px 0; border-radius: 5px;">
+                <p><strong>【重要】鑑定に際して</strong><br>
+                ※占いは、未来を断定・保証するものではございません。ご自身の望む未来へ向かうためのアドバイスとして、ご自身の判断と責任においてご活用ください。</p>
+            </div>
+
+            <h2 style="font-size: 1.5em; border: none;">【恋蛇 特別鑑定】</h2>
+            <p>あなたの恋の現状を深く読み解き、未来への一歩を照らします<br>
+            ▼ 下のボタンから、鑑定の詳細をご確認ください ▼</p>
+            
+            <a href="#" class="cta-button">[鑑定メニュー・お申し込みはこちら]</a>
+            <p style="font-size: 0.8em; color: #ccc; margin-top: 15px;">お申し込みの前に、必ず「特定商取引法に基づく表記」をご確認ください。</p>
+        </section>
+
+        <section class="section">
+            <h2>よくあるご質問 (Q&A)</h2>
+             <div class="qa-item">
+                <div class="q">Q. 占いを受けるのが初めてで不安です。</div>
+                <div class="a">A. ご安心ください。ご相談者の9割が、初めて私の鑑定を受ける方です。どんなお悩みでも、誠心誠意、心を込めて拝見いたします。あなたの全てを受け止めますので、リラックスしてお話しください。</div>
+            </div>
+            <div class="qa-item">
+                <div class="q">Q. どんな相談内容でも大丈夫ですか？</div>
+                <div class="a">A. はい。片思い、復縁、不倫、結婚、出会いなど、恋愛に関するお悩みであれば、どのような複雑なご状況でも拝見いたします。これまで3000人の方々のお悩みに寄り添ってまいりました。秘密は厳守いたしますので、ご安心ください。</div>
+            </div>
+            <div class="qa-item">
+                <div class="q">Q. 鑑定後、追加料金などを請求されませんか？</div>
+                <div class="a">A. 一切ございません。鑑定料金以外の請求はございませんので、ご安心ください。</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 恋愛占い師 恋蛇. All Rights Reserved.</p>
+    </footer>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggles = document.querySelectorAll('.toggle-testimonial');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                const body = this.nextElementSibling;
+                const isVisible = body.style.display === 'block';
+                body.style.display = isVisible ? 'none' : 'block';
+                this.textContent = isVisible ? '【クリックして体験談を読む】' : '【体験談を閉じる】';
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
